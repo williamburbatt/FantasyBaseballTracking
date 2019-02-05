@@ -1,0 +1,30 @@
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# Example .gitignore files: https://github.com/github/gitignore
+/bower_components/
+/node_modules/
+/HTML and CSS design and build websites.pdf
+/JAVASCRIPT & JQUERY Interactive Front-End Web Development.pdf
+/filezilla.png
+/Week Eight/Homework8/bootstrap/
+/Week Seven/Homework7/bootstrap/
+/bootstrap/
+/bootstrap-4.1.3-dist.zip
+/Week Eight/Homework8.zip
+/Week Seven/Homework7FINAL.zip
+/Week Seven/Homework7.zip
+/Week Seven/HOMEWORK7FINALFORREAL.zip
+/Week Five/Homework5.zip
+/Week Four/Homework4.zip
+/Week One/Homework1.zip
+/Week Six/Homework6Part1.zip
+/Week Six/Homework6Part2.zip
+/Week Six/Homework6Part2FINAL.zip
+/Week Three/Homework3.zip
+/Week Two/Homework2.zip
+/Week Nine/Homework9/bootstrap/
+/javascript-and-jquery-book-code-0915/
+/Week Nine/Homework9.zip
+/Week Ten/Homework10/bootstrap/
+/Week Ten/Homework10.zip
+/Week Eleven/Homework11/bootstrap/
