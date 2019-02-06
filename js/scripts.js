@@ -3,7 +3,8 @@
 function baseballAPI() {
     var user = config.apiKey;
     var pass = config.pass;
-    var encrypted_api_key_credentials = "" + user + ":" + pass;
+    var endpoint = config.endpoint;
+    var encrypted_api_key_credentials = btoa(user + ":" + pass);
 
 
 
@@ -22,8 +23,8 @@ function baseballAPI() {
 
 
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://api.mysportsfeeds.com/v2.0/pull/mlb/2018-regular/player_stats_totals.json', true);
-    request.setRequestHeader("Authorization", "Basic " + btoa(user + ":" + pass));
+    request.open('GET', endpoint, true);
+    request.setRequestHeader("Authorization", "Basic " + encrypted_api_key_credentials);
     request.onload = function () {
         // Begin accessing JSON data here
 
