@@ -113,6 +113,20 @@ function baseballAPI() {
                 }
 
                 p.innerHTML = stats;
+                card.addEventListener("click", function () {
+                        // TODO Create the modal
+
+                        const modal = document.getElementById("modal");
+                    $('#modal').modal('toggle')
+
+
+
+                    }
+
+
+                )
+
+
                 container.appendChild(card);
                 card.appendChild(h1);
                 card.appendChild(p);
