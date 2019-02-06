@@ -4,7 +4,7 @@ const app = document.getElementById('root');
 const container = document.createElement('div');
 container.setAttribute('class', 'container2');
 
-const message = document.createElement('h1');
+const message = document.createElement('h2');
 message.textContent = "Salary Calculator";
 app.appendChild(message);
 
