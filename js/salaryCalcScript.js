@@ -20,8 +20,16 @@ var tableShowing = false;
 const button = document.createElement('button');
 button.textContent = "Calculate";
 button.addEventListener("click", function () {
-    if (tableShowing == false)
+
+
+
+    if (tableShowing == false){
+      const spinner = document.createElement('div');
+    spinner.setAttribute('class', 'loader');
+    spinner.setAttribute('id', "salarySpinner");
+    container.appendChild(spinner);
         calcSalaries();
+    }
     else {
         var element = document.getElementById("salaryTable");
         element.parentNode.removeChild(element);
@@ -63,20 +71,29 @@ function calcSalaries() {
         var cells;
         if (valSelected == "20") {
             cells = twentyPercent(j);
+            document.getElementById("salarySpinner").style.display = "none";
+
         } else if (valSelected == "30") {
 
             cells = thirtyPercent(j);
+            document.getElementById("salarySpinner").style.display = "none";
+
         } else if (valSelected == "15split") {
 
             cells = fifteenAndThirty(j);
+            document.getElementById("salarySpinner").style.display = "none";
+
         } else {
             cells = twentyAndThirtyPercent(j);
+            document.getElementById("salarySpinner").style.display = "none";
+
         }
         tableFill = tableFill + "<tr>" + cells + "</tr>"
-        // twentyAndThirtyPercent(j);
     }
     box.innerHTML = tableFill;
     app.appendChild(box);
+
+
 
 
 }

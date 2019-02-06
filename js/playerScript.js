@@ -13,7 +13,10 @@ function baseballAPI() {
 
     app.appendChild(container);
 
-
+    const spinner = document.createElement('div');
+    spinner.setAttribute('class', 'loader');
+    spinner.setAttribute('id', "playerSpinner");
+    container.appendChild(spinner);
 
     var request = new XMLHttpRequest();
     request.open('GET', endpoint, true);
@@ -114,12 +117,17 @@ function baseballAPI() {
                 card.appendChild(h1);
                 card.appendChild(p);
             });
+            document.getElementById("playerSpinner").style.display = "none";
+
+
         } else {
             const errorMessage = document.createElement('marquee');
+            document.getElementById("playerSpinner").style.display = "none";
             errorMessage.textContent = `Gah, it's not working!`;
             app.appendChild(errorMessage);
         }
     }
+
 
     request.send();
 
