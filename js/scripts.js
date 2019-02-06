@@ -1,5 +1,3 @@
-
-
 function baseballAPI() {
     var user = config.apiKey;
     var pass = config.pass;
@@ -9,15 +7,10 @@ function baseballAPI() {
 
 
     const app = document.getElementById('root');
-
-    const logo = document.createElement('img');
-    logo.src = 'images/logo.png';
-
     const container = document.createElement('div');
     container.setAttribute('class', 'container');
 
 
-    app.appendChild(logo);
     app.appendChild(container);
 
 
@@ -81,17 +74,17 @@ function baseballAPI() {
                         return finalTable
                     },
                     generalPitchingStats: function () {
-                         var pitching = player["stats"]["pitching"];
-                          var wins = pitching.wins;
-                          var era = pitching.earnedRunAvg;
-                          var ks = pitching.pitcherStrikeouts;
-                          var whip = pitching.walksAndHitsPerInningPitched;
-                          var saves = pitching.saves;
-                          var finalTable ="<tr><td><b>wins:</b></td><td>" + wins + "</td></tr>";
-                          finalTable = finalTable + "<tr><td><b>era:</b></td><td>" + era + "</td></tr>";
-                          finalTable = finalTable + "<tr><td><b>ks:</b></td><td>" + ks + "</td></tr>";
-                          finalTable = finalTable + "<tr><td><b>whip:</b></td><td>" + whip + "</td></tr>";
-                          finalTable = finalTable + "<tr><td><b>saves:</b></td><td>" + saves + "</td></tr>";
+                        var pitching = player["stats"]["pitching"];
+                        var wins = pitching.wins;
+                        var era = pitching.earnedRunAvg;
+                        var ks = pitching.pitcherStrikeouts;
+                        var whip = pitching.walksAndHitsPerInningPitched;
+                        var saves = pitching.saves;
+                        var finalTable = "<tr><td><b>wins:</b></td><td>" + wins + "</td></tr>";
+                        finalTable = finalTable + "<tr><td><b>era:</b></td><td>" + era + "</td></tr>";
+                        finalTable = finalTable + "<tr><td><b>ks:</b></td><td>" + ks + "</td></tr>";
+                        finalTable = finalTable + "<tr><td><b>whip:</b></td><td>" + whip + "</td></tr>";
+                        finalTable = finalTable + "<tr><td><b>saves:</b></td><td>" + saves + "</td></tr>";
 
                         return finalTable
                     }
@@ -108,7 +101,7 @@ function baseballAPI() {
 
                 const p = document.createElement('table');
                 var stats;
-                var test = ""+p1.pos;
+                var test = "" + p1.pos;
 
                 if (test == "P") {
                     stats = p1.generalPitchingStats();

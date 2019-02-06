@@ -1,11 +1,8 @@
 const app = document.getElementById('root');
-const logo = document.createElement('img');
-logo.src = 'images/logo.png';
+
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container2');
-
-app.appendChild(logo);
 
 const message = document.createElement('h1');
 message.textContent = "Salary Calculator";
@@ -66,16 +63,13 @@ function calcSalaries() {
         var cells;
         if (valSelected == "20") {
             cells = twentyPercent(j);
-        }
-        else if(valSelected == "30"){
+        } else if (valSelected == "30") {
 
-         cells = thirtyPercent(j);
-        }
-          else if(valSelected == "15split"){
+            cells = thirtyPercent(j);
+        } else if (valSelected == "15split") {
 
-         cells = fifteenAndThirty(j);
-        }
-        else {
+            cells = fifteenAndThirty(j);
+        } else {
             cells = twentyAndThirtyPercent(j);
         }
         tableFill = tableFill + "<tr>" + cells + "</tr>"
