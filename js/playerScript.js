@@ -10,6 +10,7 @@ Main API pull.
 $('#fire').click(function (e)  {
 
 
+        $("#hideSearch").removeClass("d-none");
 
 
     const app = document.getElementById('root');
