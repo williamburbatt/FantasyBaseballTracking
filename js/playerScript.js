@@ -164,7 +164,7 @@ WORKS!
 **/
 baseballAPI();
 $('#playerSearch').on('keyup', function (event) {
-    if (event.keyCode == 8) {
+    if (event.keyCode == 8|| event.keyCode == 46) {
         $(".card").show()
     }
         var currString = $('#playerSearch').find('input[name="Name"]').val().toUpperCase();
