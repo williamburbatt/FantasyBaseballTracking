@@ -1,8 +1,14 @@
-function baseballAPI(posBtnClicked) {
-    var user = config.apiKey;
+/**
+Main API pull.
+
+**/
+ var user = config.apiKey;
     var pass = config.pass;
     var endpoint = config.endpoint;
     var encrypted_api_key_credentials = btoa(user + ":" + pass);
+
+$('#fire').click(function (e)  {
+
 
 
 
@@ -157,12 +163,18 @@ function baseballAPI(posBtnClicked) {
 
 
     request.send();
+ e.preventDefault();
 
-}
+});
+
+
+
 /**
+Search Function
 WORKS!
 **/
-baseballAPI();
+
+
 $('#playerSearch').on('keyup', function (event) {
     if (event.keyCode == 8|| event.keyCode == 46) {
         $(".card").show()

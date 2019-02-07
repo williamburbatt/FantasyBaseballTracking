@@ -49,27 +49,59 @@
 
     <!-- End Nav -->
 
+    <!-- Selectors for Queries  -->
+    <form class="p-2">
+        <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="position" class="col-sm-2 col-form-label">Select Players</label>
+            <div class="col-sm-4">
+                <select class="form-control" id="position">
+                    <option>All Players</option>
+                    <option>1st Base</option>
+                    <option>Second Base</option>
+                    <option>Shortstop</option>
+                    <option>Third Base</option>
+                    <option>Outfield</option>
+                    <option>Catchers</option>
+                    <option>Pitchers</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="sorting" class="col-sm-2 col-form-label">Select Sort</label>
+            <div class="col-sm-4">
+                <select class="form-control" id="sorting">
+                    <option>Last Name</option>
+                    <option>Age</option>
+                    <option>Team</option>
+                    <option>Position</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"><button id="fire" class="btn btn-primary btn-lg btn-block">Go!</button>
+        </div>
+        <div class="col-sm-4"></div>
 
-   <div class="d-flex align-items-center flex-column justify-content-center h-100 bg-dark text-white" id="header">
-    <h1 class="display-4">Search for a Player</h1>
-    <form id="playerSearch">
-        <div class="form-group">
-            <input class="form-control form-control-lg" placeholder="Name" name="Name" type="text">
         </div>
     </form>
-</div>
-<div class="container" id="content">
-    <div class="row h-100 mt-5">
-        <main class="col-md-6">
-            <h1>Results</h1>
-        </main>
+    <!-- Player Search -->
+    <div class="d-none">
+        <div class="d-flex align-items-center flex-column justify-content-center h-100" id="header">
+            <h1 class="display-4">Search for a Player</h1>
+            <form id="playerSearch">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" placeholder="Name" name="Name" type="text">
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 
-    <!-- Button trigger modal
 
-<!-- Modal -->
+    <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
