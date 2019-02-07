@@ -1,4 +1,4 @@
-function baseballAPI() {
+function baseballAPI(posBtnClicked) {
     var user = config.apiKey;
     var pass = config.pass;
     var endpoint = config.endpoint;
@@ -39,8 +39,15 @@ function baseballAPI() {
                     id: player.player.id,
                     pos: player.player.primaryPosition,
                     team: player.team.abbreviation,
+                    age: player.player.age,
                     fullName: function () {
+                        return "" + this.fName + " " + this.lName;
+                    },
+                    cardTitle: function () {
                         return "" + this.pos + " " + this.fName + " " + this.lName + " " + this.team;
+                    },
+                    info: function () {
+                        return "age:" + this.age + " position:" + this.pos + " team:" + this.team;
                     },
                     stats: function () {
                         var batting = player["stats"]["batting"];
@@ -100,7 +107,7 @@ function baseballAPI() {
 
                 const h1 = document.createElement('h1');
                 h1.setAttribute('class', p1.team.toLowerCase());
-                h1.textContent = p1.fullName();
+                h1.textContent = p1.cardTitle();
 
                 const p = document.createElement('table');
                 var stats;
@@ -117,7 +124,11 @@ function baseballAPI() {
                         // TODO Create the modal
 
                         const modal = document.getElementById("modal");
-                    $('#modal').modal('toggle')
+                        $('#modal').modal('toggle');
+                        $('#modalTitle').text(p1.fullName());
+                        $('#playerInfo').text(p1.info());
+
+
 
 
 
@@ -134,11 +145,13 @@ function baseballAPI() {
             document.getElementById("playerSpinner").style.display = "none";
 
 
+
         } else {
             const errorMessage = document.createElement('marquee');
             document.getElementById("playerSpinner").style.display = "none";
             errorMessage.textContent = `Gah, it's not working!`;
             app.appendChild(errorMessage);
+
         }
     }
 
@@ -146,4 +159,13 @@ function baseballAPI() {
     request.send();
 
 }
+/**
+TODO
+
+Filter names based on what is entered in text box.
+**/
 baseballAPI();
+ $('#playerSearch').on('keyup', function () {
+                var currString= $('#playerSearch').find('input[name="Name"]').val();
+                alert(currString);
+            });
