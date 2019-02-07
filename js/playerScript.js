@@ -160,12 +160,21 @@ function baseballAPI(posBtnClicked) {
 
 }
 /**
-TODO
-
-Filter names based on what is entered in text box.
+WORKS!
 **/
 baseballAPI();
- $('#playerSearch').on('keyup', function () {
-                var currString= $('#playerSearch').find('input[name="Name"]').val();
-                alert(currString);
-            });
+$('#playerSearch').on('keyup', function (event) {
+    if (event.keyCode == 8) {
+        $(".card").show()
+    }
+        var currString = $('#playerSearch').find('input[name="Name"]').val().toUpperCase();
+        var cards = document.getElementsByClassName('card');
+        for (i = 0; i < cards.length; i++) {
+            var card = cards[i];
+            var title = card.firstElementChild.textContent.toUpperCase();
+            if (title.indexOf(currString) == -1) {
+                card.style.display = 'none';
+            }
+        }
+
+});
